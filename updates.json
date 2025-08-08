@@ -1,13 +1,11 @@
 {
   "updates": [
     {
-      "title": "Versão  - Notificações e melhorias visuais",
-      "description": "Adicionamos notificações no topo do site e melhoramos a navegação no celular.",
+      "title": "Versão 291.12 - Estável - Versão estável",
+      "description": "Pequenas melhorias",
       "date": "2025-08-08",
       "fixes": [
-        "Correção do bug que impedia a rolagem no Safari.",
-        "Melhoria na performance de carregamento do JSON.",
-        "Responsividade aprimorada em telas pequenas."
+        "Corrigindo bugs simples no dispositivo Android/IOS"
       ]
     },
     {
