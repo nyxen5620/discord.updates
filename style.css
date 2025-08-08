@@ -1,0 +1,93 @@
+body {
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  background: #f0f2f5;
+  color: #333;
+}
+
+.container {
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2b2b2b;
+}
+
+.updates-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.update-box {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.07);
+  transition: 0.2s;
+}
+
+.update-box:hover {
+  transform: translateY(-3px);
+}
+
+.update-box .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.update-box .tag {
+  background: #4CAF50;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+.update-box h2 {
+  margin: 0 0 10px;
+  font-size: 1.3em;
+  color: #222;
+}
+
+.update-box p {
+  font-size: 1em;
+  margin: 10px 0;
+}
+
+.update-box ul {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+.update-box li {
+  margin-bottom: 5px;
+  font-size: 0.95em;
+}
+
+.update-box small {
+  display: block;
+  margin-top: 10px;
+  color: #777;
+  font-size: 0.85em;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .update-box {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.4em;
+  }
+
+  .update-box h2 {
+    font-size: 1.1em;
+  }
+}

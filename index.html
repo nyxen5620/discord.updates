@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Atualizações</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>📢 Registro de Atualizações</h1>
+    <div id="updates" class="updates-list">
+      <p>Carregando atualizações...</p>
+    </div>
+  </div>
+
+  <script>
+    fetch('updates.json')
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById('updates');
+        container.innerHTML = '';
+
+        data.updates.forEach(update => {
+          const box = document.createElement('div');
+          box.className = 'update-box';
+
+          let fixesList = '';
+          if (update.fixes && update.fixes.length > 0) {
+            fixesList = '<ul>';
+            update.fixes.forEach(fix => {
+              fixesList += `<li>🛠️ ${fix}</li>`;
+            });
+            fixesList += '</ul>';
+          }
+
+          box.innerHTML = `
+            <div class="header">
+              <h2>${update.title}</h2>
+              <span class="tag">Versão</span>
+            </div>
+            <p>${update.description}</p>
+            ${fixesList}
+            <small>🗓️ ${update.date}</small>
+          `;
+
+          container.appendChild(box);
+        });
+      })
+      .catch(error => {
+        document.getElementById('updates').innerHTML = '<p>Erro ao carregar atualizações.</p>';
+        console.error(error);
+      });
+  </script>
+</body>
+</html>
